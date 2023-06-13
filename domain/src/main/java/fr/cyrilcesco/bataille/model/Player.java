@@ -10,7 +10,7 @@ import java.util.Optional;
 public class Player {
 
     private final String name;
-    private final Deque<Card> deck = new ArrayDeque<>();
+    private final Deque<Card> deck = new ArrayDeque<>(52);
 
     public Player(String name) {
         this.name = name;
