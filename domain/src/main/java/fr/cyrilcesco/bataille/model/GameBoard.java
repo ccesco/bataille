@@ -4,9 +4,10 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
+import static fr.cyrilcesco.bataille.BatailleProperties.NUMBER_CARDS;
+
 public class GameBoard {
 
-    public static final int NUMBER_CARD = 52;
     private final List<Player> players;
 
     private final GameId gameId;
@@ -25,7 +26,7 @@ public class GameBoard {
     }
 
     private static List<Card> generateAllCard() {
-        List<Card> allCards = new ArrayList<>(NUMBER_CARD);
+        List<Card> allCards = new ArrayList<>(NUMBER_CARDS);
         for (Color color: Color.values()) {
             for(Value value: Value.values()) {
                 allCards.add(new Card(color, value));
