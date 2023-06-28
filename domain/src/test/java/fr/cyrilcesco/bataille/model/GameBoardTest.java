@@ -21,6 +21,7 @@ class GameBoardTest {
         // test unicite des cartes
         Set<Card> cardSet = new HashSet<>(gameBoard.getPlayers().get(0).getDeck());
         assertEquals(52, cardSet.size());
+        assertEquals("Player 1", gameBoard.getGameId().getName());
     }
 
     @Test
@@ -37,6 +38,7 @@ class GameBoardTest {
         Set<Card> cardSet = new HashSet<>(gameBoard.getPlayers().get(0).getDeck());
         cardSet.addAll(gameBoard.getPlayers().get(1).getDeck());
         assertEquals(52, cardSet.size());
+        assertEquals("Player 1Player 2", gameBoard.getGameId().getName());
     }
 
     @Test
@@ -56,6 +58,7 @@ class GameBoardTest {
         cardSet.addAll(gameBoard.getPlayers().get(1).getDeck());
         cardSet.addAll(gameBoard.getPlayers().get(2).getDeck());
         assertEquals(52, cardSet.size());
+        assertEquals("Player 1Player 2Player 3", gameBoard.getGameId().getName());
     }
 
     @Test
@@ -78,6 +81,7 @@ class GameBoardTest {
         cardSet.addAll(gameBoard.getPlayers().get(2).getDeck());
         cardSet.addAll(gameBoard.getPlayers().get(3).getDeck());
         assertEquals(52, cardSet.size());
+        assertEquals("Player 1Player 2Player 3Player 4", gameBoard.getGameId().getName());
     }
 
     @Test
@@ -103,6 +107,7 @@ class GameBoardTest {
         cardSet.addAll(gameBoard.getPlayers().get(3).getDeck());
         cardSet.addAll(gameBoard.getPlayers().get(4).getDeck());
         assertEquals(52, cardSet.size());
+        assertEquals("Player 1Player 2Player 3Player 4Player 5", gameBoard.getGameId().getName());
     }
 
     @Test

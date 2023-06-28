@@ -9,7 +9,10 @@ public class GameBoard {
     public static final int NUMBER_CARD = 52;
     private final List<Player> players;
 
+    private final GameId gameId;
+
     public GameBoard(List<Player> players) {
+        this.gameId = new GameId(generateGameId(players));
         this.players = players;
         if (!players.isEmpty()) {
             initialisationDistributionDesCartes();
@@ -53,5 +56,15 @@ public class GameBoard {
 
     public List<Player> getPlayers() {
         return players;
+    }
+
+    public GameId getGameId() {
+        return gameId;
+    }
+
+    private String generateGameId(List<Player> players) {
+        StringBuilder gameIdSB = new StringBuilder();
+        players.forEach(player -> gameIdSB.append(player.getName()));
+        return gameIdSB.toString();
     }
 }
